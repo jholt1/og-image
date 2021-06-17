@@ -51,7 +51,9 @@ function getArray(stringOrArray: string[] | string | undefined): string[] {
 }
 
 function getDefaultImages(images: string[], theme: Theme): string[] {
-    const defaultImage = 'https://blog.centrica.dev/assets/images/centrica_logo_normal.svg';
+    const defaultImage = theme === 'light'
+        ? 'https://blog.centrica.dev/assets/images/centrica_logo_normal.svg'
+        : 'https://blog.centrica.dev/assets/images/centrica_logo_normal.svg';
 
     if (!images || !images[0]) {
         return [defaultImage];
