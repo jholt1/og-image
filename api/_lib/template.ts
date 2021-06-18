@@ -76,9 +76,9 @@ function getCss(theme: string, fontSize: string) {
     }
 
     .plus {
-        color: #BBB;
+        color: #666;
         font-family: Times New Roman, Verdana;
-        font-size: 100px;
+        font-size: 85px;
     }
 
     .spacer {
