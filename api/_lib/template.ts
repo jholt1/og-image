@@ -98,11 +98,19 @@ function getCss(theme: string, fontSize: string) {
         font-style: normal;
         color: ${foreground};
         line-height: 1.8;
+    };
+    
+    .author {
+        font-family: 'Inter', sans-serif;
+        font-size: 75px;
+        font-style: normal;
+        color: ${foreground};
+        line-height: 1.8;
     }`;
 }
 
 export function getHtml(parsedReq: ParsedRequest) {
-    const { text, theme, md, fontSize, images, widths, heights } = parsedReq;
+    const { text, author, theme, md, fontSize, images, widths, heights } = parsedReq;
     return `<!DOCTYPE html>
 <html>
     <meta charset="utf-8">
@@ -122,6 +130,10 @@ export function getHtml(parsedReq: ParsedRequest) {
             <div class="spacer">
             <div class="heading">${emojify(
                 md ? marked(text) : sanitizeHtml(text)
+            )}
+            </div>
+            <div class="author">${emojify(
+                md ? marked(author) : sanitizeHtml(author)
             )}
             </div>
         </div>
