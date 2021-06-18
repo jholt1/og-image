@@ -92,17 +92,14 @@ function getCss(theme: string, fontSize: string) {
         vertical-align: -0.1em;
     }
     
-    .heading, .author {
+    .heading {
         font-family: 'Inter', sans-serif;
         font-size: ${sanitizeHtml(fontSize)};
-        font-style: normal;
+        font-style: bold;
         color: ${foreground};
         line-height: 1.8;
     };
-    
-    .author {
-        font-size: 86px;
-    }`;
+    `;
 }
 
 export function getHtml(parsedReq: ParsedRequest) {
