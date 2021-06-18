@@ -92,7 +92,7 @@ function getCss(theme: string, fontSize: string) {
         vertical-align: -0.1em;
     }
     
-    .heading {
+    .heading, .author {
         font-family: 'Inter', sans-serif;
         font-size: ${sanitizeHtml(fontSize)};
         font-style: normal;
@@ -101,11 +101,7 @@ function getCss(theme: string, fontSize: string) {
     };
     
     .author {
-        font-family: 'Inter', sans-serif;
         font-size: 86px;
-        font-style: normal;
-        color: ${foreground};
-        line-height: 1.8;
     }`;
 }
 
