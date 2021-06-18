@@ -102,7 +102,7 @@ function getCss(theme: string, fontSize: string) {
     
     .author {
         font-family: 'Inter', sans-serif;
-        font-size: 75px;
+        font-size: 86px;
         font-style: normal;
         color: ${foreground};
         line-height: 1.8;
