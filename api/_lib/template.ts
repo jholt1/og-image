@@ -128,8 +128,8 @@ export function getHtml(parsedReq: ParsedRequest) {
                 md ? marked(text) : sanitizeHtml(text)
             )}
             </div>
-            <div class="author">hello</div>
-            <div class="author">${emojify(
+            <div class="plus">hello</div>
+            <div class="plus">${emojify(
                 md ? marked(authorName) : sanitizeHtml(authorName)
             )}
             </div>
