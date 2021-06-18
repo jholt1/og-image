@@ -78,7 +78,7 @@ function getCss(theme: string, fontSize: string) {
     .plus {
         color: #666;
         font-family: Times New Roman, Verdana;
-        font-size: 85px;
+        font-size: 75px;
     }
 
     .spacer {
@@ -128,7 +128,6 @@ export function getHtml(parsedReq: ParsedRequest) {
                 md ? marked(text) : sanitizeHtml(text)
             )}
             </div>
-            <div class="plus">hello</div>
             <div class="plus">${emojify(
                 md ? marked(authorName) : sanitizeHtml(authorName)
             )}
