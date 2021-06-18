@@ -76,7 +76,7 @@ function getCss(theme: string, fontSize: string) {
     }
 
     .plus {
-        color: #666;
+        color: #333;
         font-family: Times New Roman, Verdana;
         font-size: 75px;
     }
