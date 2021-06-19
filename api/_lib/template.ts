@@ -35,11 +35,13 @@ function getCss() {
 
     .logo-wrapper {
         display: flex;
-        justify-content: end;
-        -webkit-justify-content: flex-end
         height: 100px;
         margin-top: auto;
-        margin-bottom: 25px;
+        -webkit-justify-content: flex-end;
+        -moz-justify-content: flex-end;
+        -ms-justify-content: flex-end;
+        justify-content: flex-end;
+        margin-bottom: 50px;
     }
 
     .tags {
