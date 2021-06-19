@@ -41,6 +41,10 @@ function getCss() {
         float: right;
     }
 
+    .logo {
+        margin-left: calc(100% - 550px);
+    }
+
     .tags {
         color: #333;
         font-family: "Open Sans", sans-serif;
