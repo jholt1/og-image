@@ -35,10 +35,9 @@ function getCss() {
 
     .logo-wrapper {
         display: flex;
-        justify-content: end;
         height: 100px;
         margin-top: auto;
-        float: right;
+        margin-bottom: 25px;
     }
 
     .logo {
