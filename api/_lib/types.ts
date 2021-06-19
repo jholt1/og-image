@@ -5,10 +5,8 @@ export interface ParsedRequest {
     fileType: FileType;
     text: string;
     authorName: string;
-    theme: Theme;
-    md: boolean;
-    fontSize: string;
-    images: string[];
-    widths: string[];
-    heights: string[];
+    tags: string;
+    summary: string;
+    time: string;
+    readTime: string;
 }

@@ -1,20 +1,26 @@
 import { IncomingMessage } from 'http';
 import { parse } from 'url';
-import { ParsedRequest, Theme } from './types';
+import { ParsedRequest } from './types';
 
 export function parseRequest(req: IncomingMessage) {
     console.log('HTTP ' + req.url);
     const { pathname, query } = parse(req.url || '/', true);
-    const { fontSize, images, widths, heights, theme, md, authorName } = (query || {});
+    const { authorName, tags = '', summary = '', time = '', readTime = '1' } = (query || {});
 
-    if (Array.isArray(fontSize)) {
-        throw new Error('Expected a single fontSize');
+    if (Array.isArray(tags)) {
+        throw new Error('Expected a single tags');
+    }
+    if (Array.isArray(time)) {
+        throw new Error('Expected a single time');
+    }
+    if (Array.isArray(summary)) {
+        throw new Error('Expected a single summary');
+    }
+    if (Array.isArray(readTime)) {
+        throw new Error('Expected a single readTime');
     }
     if (Array.isArray(authorName)) {
         throw new Error('Expected a single authorName');
-    }
-    if (Array.isArray(theme)) {
-        throw new Error('Expected a single theme');
     }
     
     const arr = (pathname || '/').slice(1).split('.');
@@ -32,38 +38,12 @@ export function parseRequest(req: IncomingMessage) {
     const parsedRequest: ParsedRequest = {
         fileType: extension === 'jpeg' ? extension : 'png',
         text: decodeURIComponent(text),
-        authorName: authorName || 'Centrica Open Technology Platform',
-        theme: theme === 'dark' ? 'dark' : 'light',
-        md: md === '1' || md === 'true',
-        fontSize: fontSize || '96px',
-        images: getArray(images),
-        widths: getArray(widths),
-        heights: getArray(heights),
+        authorName: authorName || 'Centrica Technology',
+        tags,
+        summary,
+        time,
+        readTime
     };
-    parsedRequest.images = getDefaultImages(parsedRequest.images, parsedRequest.theme);
+
     return parsedRequest;
-}
-
-function getArray(stringOrArray: string[] | string | undefined): string[] {
-    if (typeof stringOrArray === 'undefined') {
-        return [];
-    } else if (Array.isArray(stringOrArray)) {
-        return stringOrArray;
-    } else {
-        return [stringOrArray];
-    }
-}
-
-function getDefaultImages(images: string[], theme: Theme): string[] {
-    const defaultImage = theme === 'light'
-        ? 'https://blog.centrica.dev/assets/images/centrica_logo_normal.svg'
-        : 'https://blog.centrica.dev/assets/images/centrica_logo_normal.svg';
-
-    if (!images || !images[0]) {
-        return [defaultImage];
-    }
-    if (!images[0].startsWith('https://blog.centrica.dev/')) {
-        images[0] = defaultImage;
-    }
-    return images;
 }
