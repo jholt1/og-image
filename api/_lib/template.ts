@@ -26,7 +26,7 @@ function getCss() {
         text-align: left;
         align-items: center;
         justify-content: center;
-        padding: 2em;
+        padding: 7.5%;
     }
 
     .content {
