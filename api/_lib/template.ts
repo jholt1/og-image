@@ -120,7 +120,7 @@ export function getHtml(parsedReq: ParsedRequest) {
                 <img
                     class="logo"
                     alt="Generated Image"
-                    src="centrica_logo_white.svg"
+                    src="https://og-image-ten-black.vercel.app/centrica_logo_white.svg"
                     width=""
                     height="100px"
                 />
