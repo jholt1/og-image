@@ -31,6 +31,7 @@ function getCss() {
 
     .content {
         min-width: 85vw;
+        max-width: 90%;
     }
 
     .logo-wrapper {
